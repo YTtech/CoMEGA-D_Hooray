@@ -1,0 +1,19 @@
+body {
+    position: relative;
+    background-image: url("point.png");
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.tohome_button {
+    border: none;
+    margin: 0 auto;
+    opacity: 0.6;
+}
+
+.tohome_button:hover {
+    opacity: 1.0;
+    cursor: pointer;
+}

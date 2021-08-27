@@ -1,0 +1,319 @@
+html, body {
+	margin: 0;
+	background: #000;
+}
+
+.main-box {
+    margin: 0;
+    position: fixed;
+    width: 75%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: -100;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 1s opacity;
+}
+.stopfade {
+   opacity: .5;
+}
+
+.overlay {
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    width: 31%;
+    height: 18%;
+}
+
+.stampActionButton {
+    display: flex;
+    position: absolute;
+    bottom: 150%;
+    right: 46%;
+    width: 160%;
+    height: 140%;
+}
+
+#id_heartPoint {
+    position: absolute;
+    font:bold 40px Tahoma, Geneva, sans-serif;
+    font-style:normal;
+    bottom: 100%;
+    right: 35%;
+    width: 20%;
+    height: auto;
+    text-align: center;
+    margin-top: 50px;
+    animation-name: fade;
+    animation-duration: 0.7s;
+}
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+#heart_btn {
+    opacity: 0.8;
+}
+#heart_btn:hover {
+  opacity: 1.0;
+  cursor: pointer;
+}
+#heart_btn:active {
+  position: relative;
+  top: 4px;
+}
+
+#id_touchdown_icon {
+    box-shadow: 3px 3px 4px;
+}
+#id_niceplay_icon {
+    box-shadow: 3px 3px 4px;
+}
+#id_fight_icon {
+    box-shadow: 3px 3px 4px;
+}
+
+#id_popup {
+    position: relative;
+    width: 135%;
+    height: 140%;
+}
+
+#id_touchdown {
+    position: absolute;
+    width: 34%;
+    height: auto;
+    top: 25%;
+    left: 2%;
+    opacity: 0.6;
+}
+#id_touchdown:hover {
+  opacity: 1.0;
+  cursor: pointer;
+}
+
+#id_niceplay {
+    position: absolute;
+    width: 27%;
+    height: auto;
+    top: 20%;
+    left: 38%;
+    opacity: 0.6;
+}
+#id_niceplay:hover {
+  opacity: 1.0;
+  cursor: pointer;
+}
+
+#id_fight {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    top: 20%;
+    right: 3%;
+    opacity: 0.6;
+}
+#id_fight:hover {
+  opacity: 1.0;
+  cursor: pointer;
+}
+
+.friendIcon {
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 8%;
+    height: 50%;
+}
+
+.balloonAndResultButton {
+    display: inline-flex;
+    position: absolute;
+    top: -65%;
+    right: -3%;
+    width: 41%;
+    height: 57%;
+}
+#expand_button {
+font:bold 70px Tahoma, Geneva, sans-serif;
+font-style:normal;
+color:#ffffff;
+background:#d1d1d1;
+border:0px solid #ffffff;
+text-shadow:0px -1px 1px #222222;
+box-shadow:1px 1px 4px #000000;
+-moz-box-shadow:1px 1px 4px #000000;
+-webkit-box-shadow:1px 1px 4px #000000;
+border-radius:90px 90px 90px 90px;
+-moz-border-radius:90px 90px 90px 90px;
+-webkit-border-radius:90px 90px 90px 90px;
+width:32%;
+cursor:pointer;
+margin:0 auto;
+}
+#expand_button:active {
+cursor:pointer;
+position:relative;
+top:2px;
+}
+
+.changeSight {
+    display: flex;
+    position: absolute;
+    bottom: 3%;
+    left: 2%;
+    width: 12%;
+    height: 24%;
+}
+
+.friendActionIcon {
+    display: flex;
+    position: absolute;
+    top: -5%;
+    left: 110%;
+    width: 160%;
+    height: 30%;
+}
+
+#add_button {
+  position: absolute;
+  padding: .4rem;
+  border: none;
+  margin: 0 auto;
+  opacity: 0.6;
+  width: 100%;
+}
+#add_button:hover {
+  opacity: 1.0;
+  cursor: pointer;
+}
+#add_button:active {
+  position: relative;
+  top: 4px;
+}
+
+#img_friends {
+  position: absolute;
+  padding: .4rem;
+  border: none;
+  margin: 0 auto;
+  opacity: 1.0;
+  width: 100%;
+  cursor: pointer;
+}
+
+#niconico_btn {
+  position: static;
+  padding: .4rem;
+  border: none;
+  opacity: 0.6;
+}
+#niconico_btn:hover {
+  opacity: 1.0;
+  cursor: pointer;
+}
+#niconico_btn:active {
+  position: relative;
+  top: 5px;
+}
+
+#id_finish {
+font:bold 25px Tahoma, Geneva, sans-serif;
+font-style:normal;
+color:#ffffff;
+background:#1568db;
+border:0px solid #ffffff;
+text-shadow:0px -1px 1px #222222;
+box-shadow:px 0px 0px #000000;
+-moz-box-shadow:px 0px 0px #000000;
+-webkit-box-shadow:px 0px 0px #000000;
+border-radius:10px 10px 10px 10px;
+-moz-border-radius:10px 10px 10px 10px;
+-webkit-border-radius:10px 10px 10px 10px;
+width:44%;
+cursor:pointer;
+margin:0 auto;
+}
+#id_finish:active{
+cursor:pointer;
+position:relative;
+top:2px;
+}
+
+
+
+
+#camera_button {
+  position: static;
+  padding: .4rem;
+  border: none;
+  margin: 0 auto;
+  opacity: 0.6;
+}
+#camera_button:hover {
+  opacity: 1.0;
+  cursor: pointer;
+}
+#camera_button:active {
+  position: relative;
+  top: 5px;
+}
+
+
+/*
+#heart_btn {
+  width: 100%;
+  height: 100%;
+  background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  animation: fave-heart 1s steps(28);
+}
+#heart_btn:active {
+  background-position: -2800px 0;
+  transition: background 1s steps(28);
+}
+@keyframes fave-heart {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2800px 0;
+  }
+}
+*/
+
+/*
+#sight_button {
+  position: fixed;
+  padding: .4rem;
+  border: none;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  background: rgba(0,120,120,0.83);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s background;
+}
+#sight_button button:hover {
+   background: rgba(0,0,0,0.5);
+}
+*/

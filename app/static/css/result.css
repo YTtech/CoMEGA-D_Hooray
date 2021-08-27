@@ -1,0 +1,24 @@
+body {
+    position: relative;
+    background-image: url("result.png");
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.main{
+    bottom: 5%;
+    left: 5%;
+}
+
+.tohome_button {
+    border: none;
+    margin: 0 auto;
+    opacity: 0.6;
+}
+
+.tohome_button:hover {
+    opacity: 1.0;
+    cursor: pointer;
+}

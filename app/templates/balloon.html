@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>
+
+    </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- モバイル最適化 -->
+    <link rel="stylesheet" type="text/css" href="../static/css/static.css" id="originstyle">
+
+</head>
+<body>
+    <input type="button" value="切り替え" onclick="changeStyle('../static/css/afterballoon.css');" />
+    <script language="javascript" type="text/javascript">
+    var changeStyle = function(url) {
+    var linkstyle = document.getElementById('originstyle');
+    linkstyle.href = url;
+    };
+
+    </script>
+</body>
+</html>

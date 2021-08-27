@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>
+
+    </title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+    <h1></h1>
+    <!-- コンテンツ書く autoplayはmutedじゃないと自動再生されない -->
+
+    <div class="main-box">
+        <video autoplay loop muted poster="../static/images/poster_1.png" id="bgvid">
+            <source src="../static/soccer_1.mp4" type="video/mp4">
+        </video>
+        <div class="overlay">
+            <img src="../static/images/niconico.png" id="niconico_btn" onclick="emoji_selected()">
+            <img src="../static/images/heart_default.png" id="heart_btn" onclick="click_heart()">
+            <!--風船連打および観戦終了ボタン出すための部分-->
+            <button onclick="ending()" id="expand_button">＋</button>
+            <div class="balloonAndResultButton">
+                <img src="../static/images/balloon_icon.png" onclick="changeStyle('../static/css/afterballoon.css');" id="id_balloon"/>
+                <button onclick="location.href='/result'" id="id_finish" class="other_button">観戦 <br> 終了</button>
+                <script language="javascript" type="text/javascript">
+                    var showBalloon = document.getElementById('id_balloon');
+                    var showFinish = document.getElementById('id_finish');
+                    showBalloon.style.display = "none";
+                    showFinish.style.display = "none";
+                    function ending() {
+                        if (showBalloon.style.display == "none") {
+                            showBalloon.style.display = "block";
+                            showFinish.style.display = "block";
+                        } else {
+                            showBalloon.style.display = "none";
+                            showFinish.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+
+            <!--https://codepen.io/donovanh/pen/dYqxNb-->
+            <div class="stampActionButton">
+                <img src="../static/images/popup.png" id="id_popup">
+                <img src="../static/css/touchdown.png" onclick="click_touchdown()" id="id_touchdown">
+                <img src="../static/css/niceplay.png" onclick="click_niceplay()" id="id_niceplay">
+                <img src="../static/css/fight.png" onclick="click_fight()" id="id_fight">
+            </div>
+            <label id="id_heartPoint"></label>
+        </div>
+        <div class="changeSight">
+            <img src="../static/images/camera.png" onclick="click_changeVideo()" id="camera_button">
+        </div>
+        <script language="javascript" type="text/javascript">
+            var vid_src = new Array("../static/soccer_1.mp4","../static/soccer_2.mp4","../static/soccer_3.mp4","../static/soccer_4.mp4","../static/soccer_audience.mp4");
+            var vid_poster = new Array("../static/images/poster_1.png","../static/images/poster_2.png","../static/images/poster_3.png","../static/images/poster_4.png","../static/images/poster_audience.png");
+            var vid_num = 0;
+            function click_changeVideo() {
+                if (vid_num == 4) {
+                    vid_num = 0;
+                }
+                else {
+                    vid_num++;
+                }
+                document.getElementById("bgvid").poster = vid_poster[vid_num];
+                document.getElementById("bgvid").src = vid_src[vid_num];
+            }
+        </script>
+        <div class="friendIcon">
+            <img src="../static/images/add_icon.png" id="add_button" onclick="display_friends()">
+            <img src="../static/images/friends_icon.png" id="img_friends" onclick="move_friendSight()">
+            <div class="friendActionIcon">
+                <img src="../static/css/touchdown.png" id="id_touchdown_icon">
+                <img src="../static/css/niceplay.png" id="id_niceplay_icon">
+                <img src="../static/css/fight.png" id="id_fight_icon">
+            </div>
+        </div>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+
+    var add_friends_icon = document.getElementById("add_button");
+    var friends_icon = document.getElementById("img_friends");
+    img_friends.style.display = "none";
+
+    function display_friends() {
+        add_friends_icon.style.display = "none"
+        img_friends.style.display = "block"
+    }
+    function move_friendSight() {
+        if (vid_num == 3) {
+            // ここに線を引く処理書く
+        }
+        else {
+            vid_num = 3;
+            document.getElementById("bgvid").poster = vid_poster[vid_num];
+            document.getElementById("bgvid").src = vid_src[vid_num];
+        }
+    }
+
+    // ボタン
+    var bgpopup = document.getElementById("id_popup");
+    var btn_touchdown = document.getElementById("id_touchdown");
+    var btn_niceplay = document.getElementById("id_niceplay");
+    var btn_fight = document.getElementById("id_fight");
+    var icon_touchdown = document.getElementById("id_touchdown_icon");
+    var icon_niceplay = document.getElementById("id_niceplay_icon");
+    var icon_fight = document.getElementById("id_fight_icon");
+    bgpopup.style.display = "none";
+    btn_touchdown.style.display = "none";
+    btn_niceplay.style.display = "none";
+    btn_fight.style.display = "none";
+    icon_touchdown.style.display = "none";
+    icon_niceplay.style.display = "none";
+    icon_fight.style.display = "none";
+
+    function emoji_selected() {
+        if (btn_touchdown.style.display == "none") {
+            bgpopup.style.display = "block";
+            btn_touchdown.style.display = "block";
+            btn_niceplay.style.display = "block";
+            btn_fight.style.display = "block";
+        } else {
+            bgpopup.style.display = "none";
+            btn_touchdown.style.display = "none";
+            btn_niceplay.style.display = "none";
+            btn_fight.style.display = "none";
+        }
+    }
+
+    function click_touchdown() {
+        icon_touchdown.style.display = "block";
+        emoji_selected();
+        timerId_1 = setTimeout(disable_icon1, 3000);
+        function disable_icon1() {
+            clearTimeout(timerId_1);
+            icon_touchdown.style.display = "none";
+        }
+    }
+    function click_niceplay() {
+        icon_niceplay.style.display = "block";
+        emoji_selected();
+        timerId_2 = setTimeout(disable_icon2, 3000);
+        function disable_icon2() {
+            clearTimeout(timerId_2);
+            icon_niceplay.style.display = "none";
+        }
+    }
+    function click_fight() {
+        icon_fight.style.display = "block";
+        emoji_selected();
+        timerId_3 = setTimeout(disable_icon3, 3000);
+        function disable_icon3() {
+            clearTimeout(timerId_3);
+            icon_fight.style.display = "none";
+        }
+    }
+
+    var point_counter = 0;
+    var lbl_point = document.getElementById('id_heartPoint');
+    lbl_point.style.display = "none";
+    var hbtn = document.getElementById('heart_btn');
+    var btn_flag = 0;
+    function click_heart() {
+        if (btn_flag == 1) {
+            disable_heart();
+        }
+        point_counter = 10 + Math.floor(Math.random()*10)*10;
+        lbl_point.textContent = '+'+ String(point_counter);
+        hbtn.src = "../static/images/heart.png"
+        timerId_heart = setTimeout(disable_heart, 2000);
+        lbl_point.style.display = "block";
+        btn_flag = 1;
+        function disable_heart() {
+            clearTimeout(timerId_heart);
+            lbl_point.style.display = "none";
+            hbtn.src = "../static/images/heart_default.png"
+            btn_flag = 0;
+        }
+    }
+
+    var counter = 0;
+
+    var changeStyle = function(url) {
+        counter += Math.floor(Math.random()*10)
+
+        if (counter > 100) {
+            var linkstyle = document.getElementById('originstyle');
+            linkstyle.href = url;
+        }
+    };
+
+    </script>
+
+
+
+</body>
+</html>
