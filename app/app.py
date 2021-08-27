@@ -19,5 +19,5 @@ def result():
     return render_template('result.html')
 
 if __name__ == '__main__':
-    app.debug = False
+    app.debug = True
     app.run()
